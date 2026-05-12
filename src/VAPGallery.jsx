@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import JSZip from "jszip";
 
 const BRAND = {
@@ -563,7 +563,22 @@ export default function VAPGallery() {
   const [expandedId, setExpandedId] = useState(null);
   const [showPlatformPicker, setShowPlatformPicker] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
+  const containerRef = useRef(null);
   const maxReached = selected.length >= 7;
+
+  // Communicate height to parent iframe
+  useEffect(() => {
+    const sendHeight = () => {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ type: "resize", height }, "*");
+    };
+
+    const observer = new ResizeObserver(sendHeight);
+    observer.observe(document.body);
+    sendHeight();
+
+    return () => observer.disconnect();
+  }, [expandedId, selected, showPlatformPicker]);
 
   const toggleSelect = (id) => {
     setSelected((prev) =>
