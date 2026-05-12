@@ -5,5 +5,12 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      input: 'src/embed.jsx',
+      output: {
+        entryFileNames: 'vap-gallery.js',
+        format: 'iife',
+      },
+    },
   },
 });
