@@ -777,6 +777,8 @@ DISCLAIMER
 
 The Virtual Advisory Panel provides fictional advisor personas for use with third-party AI platforms. Filament does not operate, host, or control the AI sessions conducted with these personas. All advice generated during a session is produced by the AI platform you choose and does not represent the views, recommendations, or professional guidance of Filament or its staff. The personas are designed to simulate diverse perspectives, not to replace qualified professional counsel. Filament assumes no liability for decisions made based on AI-generated feedback.
 
+All advisor personas are entirely fictional. Any resemblance to actual persons, living or dead, is purely coincidental and unintentional.
+
 
 Built with the Virtual Advisory Panel by Filament.
 
